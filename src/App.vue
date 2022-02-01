@@ -1,11 +1,14 @@
 <template>
   <div id="app">
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-16 rounded">
-      Button
-    </button>
+    <Header />
+    <router-view />
   </div>
 </template>
 
-<style>
+<script>
+import Header from "@/components/Header.vue";
 
-</style>
+export default {
+  components: { Header },
+};
+</script>
