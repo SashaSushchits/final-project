@@ -1,9 +1,11 @@
 <template>
   <div class="relative h-screen">
-    <div
-      class="absolute w-full dark:bg-gray-800 bg-gray-500"
-      id="particles-js"
-    ></div>
+    <div class="absolute w-full dark:bg-gray-800 bg-gray-500" id="particles-js"></div>
+    <div class="absolute top-64 left-128">
+      <h1 class="dark:text-white text-3xl mb-5">Скорее за покупками!</h1>
+        <router-link to="/products" tag="button" class="py-3  px-10 bg-blue-300 lg:m-0 hover:bg-teal-300 font-medium cursor-pointer rounded transition duration-500 text-black">Перейти к каталогу
+        </router-link>
+    </div>
   </div>
 </template>
 

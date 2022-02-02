@@ -1,8 +1,8 @@
 <template>
-  <div class="fixed w-full z-20 top-0 bg-gray-900 flex items-center">
-    <div class="w-3/5">
+  <div class="fixed w-full z-20 top-0 bg-gray-900 flex items-center justify-evenly">
+    <div class="w-2/5">
       <router-link to="/">
-        <img class="icon" style="width:100px" src="@/assets/image/logo/shop.svg" alt="shop">
+        <img class="icon" style="width:80px" src="@/assets/image/logo/shop.svg" alt="shop">
       </router-link>
     </div>
 
@@ -15,13 +15,15 @@
     </ul>
 
     <ChangeTheme />
+    <CartIndicator />
   </div>
 </template>
 
 <script>
 import ChangeTheme from './ChangeTheme.vue'
+import CartIndicator from './CartIndicator.vue'
 export default {
-  components: { ChangeTheme },
+  components: { ChangeTheme, CartIndicator },
   name: "Header",
   data() {
     return{
@@ -35,8 +37,8 @@ export default {
           path: '/products'
         },
         {
-          name: 'Новости',
-          path: '/news'
+          name: 'Наши отзывы',
+          path: '/comments'
         },
         {
           name: 'Контакты',

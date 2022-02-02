@@ -1,9 +1,10 @@
 <template>
   <div class="pt-32 pb-12 dark:bg-gray-900 bg-white">
     <div class="lg:container mx-auto dark:text-white text-black">
-
+        <a class="py-3 px-6 ml-5 bg-blue-300 hover:bg-teal-300 font-medium cursor-pointer rounded transition duration-500 text-black"
+          @click.prevent="$router.back()">Назад</a>
         <div class="mx-5">
-            <h1 class="lg:text-4xl sm:text-3xl text-left mb-5 ">Контакты</h1>
+            <h1 class="lg:text-4xl sm:text-3xl text-left my-5">Контакты</h1>
             <p class="text-base mb-5">
               Мы тщательно выбираем себе в команду лучших специалистов, которые рвутся делиться своими знаниями не ради денег — у них с этим все хорошо, а ради личного удовлетворения — за ваш результат и успех, за ваше «Спасибо»! Ведь каждый учитель отражается в своих учениках!
             </p>
