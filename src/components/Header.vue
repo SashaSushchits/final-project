@@ -34,7 +34,7 @@ export default {
         },
         {
           name: 'Каталог',
-          path: '/products'
+          path: '/catalog'
         },
         {
           name: 'Наши отзывы',

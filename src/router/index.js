@@ -8,11 +8,13 @@ import NotFoundPage from '@/pages/NotFoundPage'
 import OrderPage from '@/pages/OrderPage'
 import CommentsPage from '@/pages/CommentsPage'
 import MapPage from '@/pages/MapPage'
+import CatalogPage from '@/pages/CatalogPage'
 
 Vue.use(VueRouter)
 
 const routes = [
   {name: 'main', component: MainPage, path:'/'},
+  {name: 'catalog', component: CatalogPage, path:'/catalog'},
   {name: 'product', component: ProductPage, path:'/product/:id'},
   {name: 'contacts', component: HeaderContacts, path:'/contacts'},
   {name: 'comments', component: CommentsPage, path:'/comments'},

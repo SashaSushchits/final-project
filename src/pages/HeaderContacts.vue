@@ -70,8 +70,10 @@
                     <h3 class="text-2xl font-bold mb-3">Центральный аппарат</h3>
                     
                       <div class="flex flex-wrap gap-2 my-3" >
-                        <div class="items-center justify-center border rounded-lg border-teal-600" v-for="item in list" :key="item.code">
-                          <button :class="{'current':code === item.code}" class="py-1 px-1 bg-transparent lg:m-0 hover:bg-teal-300 hover:text-black cursor-pointer rounded-lg transition duration-500" @click="updateCode([item.code, item.mail])">{{item.head}}</button>
+                        <div class="flex flex-row flex-wrap gap-3">
+                          <div class="items-center justify-center border rounded-lg border-teal-600" v-for="item in list" :key="item.code">
+                            <button :class="{'current':code === item.code}" class="py-1 px-1 bg-transparent lg:m-0 hover:bg-teal-300 hover:text-black cursor-pointer rounded-lg transition duration-500" @click="updateCode([item.code, item.mail])">{{item.head}}</button>
+                          </div>
                         </div>
                         <transition name="slide">
                           <div v-show="code === code">
@@ -96,7 +98,7 @@
 
             </div>
 
-            <div class="flex justify-around items-center dark:bg-gray-800 bg-gray-800 text-white border border-transparent rounded mt-24">
+            <div class="flex justify-around items-center dark:bg-gray-800 bg-gray-800 text-white border border-transparent rounded mt-24 py-10">
               <div class="flex flex-col">
                 <h2 class="lg:text-3xl sm:text-2xl text-left mb-5">Карьера в «STORE»</h2>
                 <p class="text-base mb-5">Присоединейся к команде профессионалов</p>
