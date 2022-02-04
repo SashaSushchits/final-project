@@ -31,7 +31,7 @@
                           <div class="flex items-start">
                             <img class="mr-6 icon" style="width:40px"  src="@/assets/image/icons/phone.svg" alt="">
                             <div class="flex flex-col">
-                              <a class="hover:underline" href="tel:+375 17 275 57 88 ">+375 17 275 57 88</a>
+                              <a class="hover:underline" href="tel:+375 22 222 22 22 ">+375 22 222 22 22</a>
                               <p>(городской номер)</p>
                             </div>
                           </div>
