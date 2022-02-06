@@ -22,7 +22,7 @@
     </li>
 
     <label class="ml-5">
-      <select @click="submit()" class="text-black p-1 rounded" type="text" name="category" v-model.number="currentPerPage">
+      <select @click="submit()" class="text-black p-1 bg-gray-300 rounded" type="text" name="category" v-model.number="currentPerPage">
         <option :value="item.page" v-for="(item, index) in data" :key="index"> {{ item.page }}</option>
       </select>
     </label>

@@ -14,7 +14,7 @@
                         <h1 class="text-3xl">{{product.title}}</h1>
                     </div>
                     <div>
-                        <h1 class="text-3xl dark:text-blue-500 text-blue-300">Цена: {{product.price}} рублей</h1>
+                        <h1 class="text-3xl dark:text-blue-500 text-blue-300">Цена: {{product.price | numberFormat}} рублей</h1>
                     </div>
                     <div>
                         <p class="font-bold">Цвет</p>
@@ -57,7 +57,7 @@
                             </button>
                         </div>
 
-                        <button class="py-3 px-3 bg-green-400 hover:bg-green-500 font-medium cursor-pointer rounded transition duration-500 text-black" type="submit">
+                        <button class="py-3 px-3 bg-green-400 hover:bg-green-500 font-medium cursor-pointer rounded transition duration-500 text-black" type="submit" @click.prevent="addToCart">
                             В корзину
                         </button>
                     </div>
@@ -70,7 +70,7 @@
 
 <script>
 import products from '@/data/products.js'
-import { mapActions } from 'vuex'
+import numberFormat from "@/helpers/numberFormat";
     export default {
         data() {
             return {
@@ -86,7 +86,23 @@ import { mapActions } from 'vuex'
             }
         },
         methods: {
-        }
+            addToCart(){
+                if(this.colorId !== 0 && this.productAmount >= 1) {
+                    this.$store.commit(
+                        'addProductToCart',
+                        {productId: this.product.id, amount: this.productAmount, colorId:this.colorId}
+                    )
+                    this.productAmount = 1
+                } else {
+                    this.productAmount = 1
+                    alert('Проверьте правильность введенных данных, все параметры должны быть заполнены.')
+                }
+              
+            }
+        },
+        filters: {
+            numberFormat
+        },
     }
 </script>
 

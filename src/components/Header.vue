@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed w-full z-20 top-0 bg-gray-900 flex items-center justify-evenly">
+  <div class="fixed w-full z-20 top-0 bg-gray-800 flex items-center justify-evenly">
     <div class="w-2/5">
       <router-link to="/">
         <img class="icon" style="width:80px" src="@/assets/image/logo/shop.svg" alt="shop">

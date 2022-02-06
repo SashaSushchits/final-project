@@ -2,20 +2,18 @@
     <div class="flex relative">
       <router-link to="/cart">
         <img class="icon " style="width:80px" src="@/assets/image/icons/cart_icon.svg" alt="cart">
-        <span class="absolute top-3 right-3 text-white">1</span>
+        <span class="absolute top-3 right-3 text-white">{{ products.length }}</span>
       </router-link>
     </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters } from "vuex";
 export default {
-//   computed: {
-//   ...mapGetters({totalProducts:'totalProducts', cartProductsLoading:'cartProductsLoading'}),
-//   },
-//   methods: {
-//     ...mapActions(['loadCart'])
-//   }
+  computed: {
+  ...mapGetters({products:'cartProductsDetail'}),
+  },
+
 }
 </script>
 
