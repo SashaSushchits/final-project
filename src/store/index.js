@@ -22,7 +22,28 @@ export default new Vuex.Store({
               colorId: payload.colorId
           })
       }
+    },
+    updateCartProductAmount(state, payload){
+      if(payload.amount < 1) {
+        return;
+      } else {
+        const item = state.cartProducts.find(item => item.productId === payload.productId && item.colorId === payload.colorId);
+        if(item) {
+          item.amount = payload.amount;
+        }
+      }
+    },
+    deleteCartProduct(state, payload){
+      const item = state.cartProducts.find(item => item.productId === payload.productId && item.colorId === payload.colorId);
+      if(item) {
+        console.log(item)
+        const arr = state.cartProducts.filter(product => (product.productId !== item.productId || product.colorId !== item.colorId));
+        console.log(arr)
+        state.cartProducts = arr;
+      }
     }
+
+    
   },
   getters: {
     cartProductsDetail(state) {
@@ -38,7 +59,9 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    
+    deleteProduct() {
+
+    }
   },
   modules: {
     settings

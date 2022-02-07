@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-800 flex items-center justify-evenly">
+  <div class="bg-gray-900 flex items-center justify-evenly">
     <div class="flex flex-col">
       <h3 class="text-white">Наши социальные сети:</h3>
       <div class="flex gap-3">

@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-32 pb-12 dark:bg-gray-900 bg-white">
+  <div class="pt-32 pb-12 dark:bg-gray-800 bg-white">
     <div class="lg:container mx-auto dark:text-white text-black">
         <a class="py-3 px-6 ml-5 bg-blue-300 hover:bg-teal-300 font-medium cursor-pointer rounded transition duration-500 text-black"
           @click.prevent="$router.back()">Назад</a>
@@ -11,7 +11,7 @@
 
             <div>
                 <h2 class="lg:text-3xl sm:text-2xl text-left mb-5">Офис</h2>
-                <div class="flex flex-col min-h-full dark:bg-gray-800 bg-gray-100 border border-transparent rounded">
+                <div class="flex flex-col min-h-full dark:bg-gray-700 bg-gray-100 border border-transparent rounded">
                   <div class="flex gap-5">
                     <div class="">
                       <div class="dark:bg-gray-700 bg-gray-200 border border-transparent rounded-lg items-center justify-center m-5"><img class="p-5 icon" style="max-width:150px" src="@/assets/image/logo/portfolio.svg" alt="bag"></div>
@@ -98,7 +98,7 @@
 
             </div>
 
-            <div class="flex justify-around items-center dark:bg-gray-800 bg-gray-800 text-white border border-transparent rounded mt-24 py-10">
+            <div class="flex justify-around items-center dark:bg-gray-700 bg-gray-800 text-white border border-transparent rounded mt-24 py-10">
               <div class="flex flex-col">
                 <h2 class="lg:text-3xl sm:text-2xl text-left mb-5">Карьера в «STORE»</h2>
                 <p class="text-base mb-5">Присоединейся к команде профессионалов</p>

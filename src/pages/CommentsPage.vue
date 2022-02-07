@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-32 pb-12 dark:bg-gray-900 bg-white">
+  <div class="pt-32 pb-12 dark:bg-gray-800 bg-white">
     <div class="lg:container mx-auto dark:text-white text-black">
       <a class="py-3 px-6 ml-5 bg-blue-300 hover:bg-teal-300 font-medium cursor-pointer rounded transition duration-500 text-black"
       @click.prevent="$router.back()">Назад</a>
@@ -7,12 +7,12 @@
             <h1 class="lg:text-4xl sm:text-3xl text-left mb-10 mt-5">Наши отзывы</h1>
             <div class="grid lg:grid-cols-2 gap-5  sm:grid-cols-1 sm:w-full ">
 
-                <div class="flex md:flex-row sm:flex-col-reverse p-5 dark:bg-gray-800 bg-gray-100 border border-transparent rounded items-center justify-center "
+                <div class="flex md:flex-row sm:flex-col-reverse p-5 dark:bg-gray-700 bg-gray-100 border border-transparent rounded items-center justify-center "
                      v-for="comment in comments" :key="comment.id">
                     <div class="flex justify-end flex-col ">
                         <h2 class="md:text-2xl font-bold pb-2 sm:text-xl text-blue-400">{{comment.name}}</h2>
                         <p>{{comment.body}}</p>
-                        <h3 class="text-xl font-bold pb-2 mt-5 text-gray-600">{{ comment.mail }}</h3>
+                        <h3 class="text-xl font-bold pb-2 mt-5 text-gray-800">{{ comment.mail }}</h3>
                     </div>
                 </div>
 
