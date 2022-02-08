@@ -1,7 +1,7 @@
 const colors = require('tailwindcss/colors')
 module.exports = {
-  purge: ['./index.html', './src/*/.{vue,js,ts,jsx,tsx}'],
-  darkMode: 'class', // or 'media' or 'class'
+  content: ['./index.html', './src/**/*/.{vue,js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       spacing: {
@@ -11,7 +11,6 @@ module.exports = {
         'sm': '280px',
       },
       colors: {
-        // Build your palette here
         transparent: 'transparent',
         current: 'currentColor',
         gray: colors.trueGray,

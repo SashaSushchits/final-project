@@ -19,12 +19,14 @@ import { mapGetters } from 'vuex'
 import CartItem from '../components/CartItem.vue'
 
     export default {
-    components: { CartItem },
-        
+        components: { CartItem },
+            
         computed: {
             ...mapGetters({products: 'cartProductsDetail'}),
         },
-
+        created() {
+            localStorage.setItem('cart', JSON.stringify(this.products))
+        },
     }
 </script>
 

@@ -42,25 +42,17 @@ export default new Vuex.Store({
         state.cartProducts = arr;
       }
     }
-
-    
   },
   getters: {
     cartProductsDetail(state) {
-      return state.cartProducts.map(item => {
+      const arr = state.cartProducts.map(item => {
         return {
           ...item,
           product: products.find(p => p.id === item.productId && p.colors.filter(c => c.id === item.id)),
           color: colors.find(color => color.id === item.colorId)}
       });
-    },
-    localCartProducts(state, getters){
-      localStorage.setItem('cart', JSON.stringify(getters.cartProductsDetail))
-    }
-  },
-  actions: {
-    deleteProduct() {
-
+      localStorage.setItem('cart', JSON.stringify(arr));
+      return arr
     }
   },
   modules: {
