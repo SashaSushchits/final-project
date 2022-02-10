@@ -14,7 +14,7 @@
                         <h1 class="text-3xl">{{product.title}}</h1>
                     </div>
                     <div>
-                        <h1 class="text-3xl dark:text-blue-500 text-blue-300">Цена: {{product.price | numberFormat}} рублей</h1>
+                        <h1 class="text-3xl dark:text-blue-500 text-blue-300">Цена: {{product.price | numberFormat}} Br</h1>
                     </div>
                     <div>
                         <p class="font-bold">Цвет</p>

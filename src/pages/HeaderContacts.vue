@@ -12,15 +12,15 @@
             <div>
                 <h2 class="lg:text-3xl sm:text-2xl text-left mb-5">Офис</h2>
                 <div class="flex flex-col min-h-full dark:bg-gray-700 bg-gray-100 border border-transparent rounded">
-                  <div class="flex gap-5">
+                  <div class="flex md:flex-row md:items-start md:gap-5 sm:gap-0 sm:flex-col sm:items-center">
                     <div class="">
                       <div class="dark:bg-gray-700 bg-gray-200 border border-transparent rounded-lg items-center justify-center m-5"><img class="p-5 icon" style="max-width:150px" src="@/assets/image/logo/portfolio.svg" alt="bag"></div>
                     </div>
-                    <div class="flex flex-col pr-5">
+                    <div class="flex flex-col md:pr-5 sm:pl-2">
                       <h3 class="text-2xl my-3 font-bold">
                         Call-центр
                       </h3>
-                      <div class="flex sm:flex-col lg:flex-row gap-5">
+                      <div class="flex sm:flex-col lg:flex-row md:gap-5">
                         <div class="flex items-start">
                           <img class="mr-6 icon" style="width:40px" src="@/assets/image/icons/phone.svg" alt="">
                           <p class="font-medium text-base"><b><a class="hover:underline" href="tel:777">777</a></b><br>
@@ -28,14 +28,14 @@
                           </p>
                         </div>
                         <div class="flex flex-col">
-                          <div class="flex items-start">
+                          <div class="flex items-start sm:mb-2">
                             <img class="mr-6 icon" style="width:40px"  src="@/assets/image/icons/phone.svg" alt="">
                             <div class="flex flex-col">
                               <a class="hover:underline" href="tel:+375 22 222 22 22 ">+375 22 222 22 22</a>
                               <p>(городской номер)</p>
                             </div>
                           </div>
-                          <div class="flex items-start">
+                          <div class="flex items-start sm:mb-2">
                             <img class="mr-6 icon" style="width:40px" src="@/assets/image/icons/clock.svg" alt="">
                             <p class="font-medium text-base"><b>Время работы:</b><br>
                               Ежедневно: 9.00 – 21.00
@@ -43,21 +43,21 @@
                           </div>
                         </div>
                       </div>
-                      <div class="flex mb-5 items-start">
+                      <div class="flex mb-5 items-start sm:mb-2">
                           <img class="mr-6 icon" src="@/assets/image/icons/location.svg" alt="">
                           <p class="font-medium text-base"><b>Юридический адрес:</b><br>
                             332211, г. Минск, ул. Карла Либкнехта 68, офис 310.<br>
                           </p>
                       </div>
                       <div class="flex sm:flex-col lg:flex-row items-start mb-5">
-                        <div class="flex items-start">
+                        <div class="flex items-start sm:mb-2">
                           <img class="mr-6 icon" style="width:40px" src="@/assets/image/icons/location.svg" alt="">
                           <p class="font-medium text-base"><b>Адрес для корреспонденции:</b><br>
                             332211, г. Минск, ул. Карла Либкнехта 68, офис 310.
                           </p>
                         </div>
-                        <div class="flex items-start">
-                          <img class="mx-6 icon" style="width:40px" src="@/assets/image/icons/clock.svg" alt="">
+                        <div class="flex items-start lg:ml-5 sm:ml-0">
+                          <img class="mr-6 icon" style="width:40px" src="@/assets/image/icons/clock.svg" alt="">
                           <p class="font-medium text-base"><b>Время работы:</b>
                             пн-пт: 8.30-17.30<br>
                             обед: 13.00-14.00
@@ -69,10 +69,10 @@
                   <div class="mx-5">
                     <h3 class="text-2xl font-bold mb-3">Центральный аппарат</h3>
                     
-                      <div class="flex flex-wrap gap-2 my-3" >
-                        <div class="flex flex-row flex-wrap gap-3">
+                      <div class="flex md:flex-row md:flex-wrap gap-2 my-3 sm:flex-col" >
+                        <div class="flex md:flex-row md:flex-wrap gap-3 sm:flex-col">
                           <div class="items-center justify-center border rounded-lg border-teal-600" v-for="item in list" :key="item.code">
-                            <button :class="{'current':code === item.code}" class="py-1 px-1 bg-transparent lg:m-0 hover:bg-teal-300 hover:text-black cursor-pointer rounded-lg transition duration-500" @click="updateCode([item.code, item.mail])">{{item.head}}</button>
+                            <button :class="{'current':code === item.code}" class="py-1 px-1 bg-transparent lg:m-0 hover:bg-teal-300 hover:text-black cursor-pointer rounded-lg transition duration-500 sm:w-full" @click="updateCode([item.code, item.mail])">{{item.head}}</button>
                           </div>
                         </div>
                         <transition name="slide">
@@ -99,14 +99,14 @@
             </div>
 
             <div class="flex justify-around items-center dark:bg-gray-700 bg-gray-800 text-white border border-transparent rounded mt-24 py-10">
-              <div class="flex flex-col">
+              <div class="flex flex-col sm:pl-3">
                 <h2 class="lg:text-3xl sm:text-2xl text-left mb-5">Карьера в «STORE»</h2>
                 <p class="text-base mb-5">Присоединейся к команде профессионалов</p>
                 <router-link to="/" tag="button" class="py-3 w-2/3 px-10 bg-blue-300  lg:m-0 hover:bg-teal-300 font-medium cursor-pointer rounded transition duration-500 text-black">Вакансии</router-link>
                 <router-link to="/" tag="a" class="flex items-center detail-link my-5">Подробнее <img class="ml-2" src="@/assets/image/icons/arrow.svg" alt="detail"></router-link>
               </div>
               <div>
-                <img class="p-5 " style="max-width: 500px; filter: invert(1)" src="@/assets/image/logo/shop.svg" alt="footerLogo">
+                <img class="p-5 md:block sm:hidden" style="max-width: 500px; filter: invert(1)" src="@/assets/image/logo/shop.svg" alt="footerLogo">
               </div>
             </div>
         </div>

@@ -7,18 +7,19 @@
       w-1/4
       dark:bg-gray-700
       bg-gray-300
+      dark:text-white
       text-black
       py-10
     "
   >
     <h2 class="text-2xl text-center font-bold">Фильтры</h2>
 
-    <div class="ml-20">
+    <div class="xl:ml-20 mx-5">
       <p class="font-bold">Цена</p>
       <div class="flex flex-col">
         <span class="font-bold">От</span>
         <input
-          class="dark:bg-gray-300 bg-gray-500 rounded text-center w-1/2"
+          class="dark:bg-gray-300 bg-gray-500 text-black rounded text-center xl:w-2/3 p-2"
           type="text"
           name="min-price"
           value="0"
@@ -26,7 +27,7 @@
         />
         <span class="font-bold">До</span>
         <input
-          class="dark:bg-gray-300 bg-gray-500 rounded text-center w-1/2"
+          class="dark:bg-gray-300 bg-gray-500 text-black rounded text-center xl:w-2/3 p-2"
           type="text"
           name="max-price"
           value="0"
@@ -35,15 +36,15 @@
       </div>
     </div>
 
-    <div class="mt-5 mb-12 ml-20">
+    <div class="mt-5 mb-12 xl:ml-20 ml-5">
       <p class="font-bold">Категория</p>
       <select
-        class="dark:bg-gray-300 bg-gray-400 text-black w-1/2"
+        class="dark:bg-gray-300 bg-gray-400 text-black rounded xl:w-2/3 p-2"
         type="text"
         name="category"
         v-model.number="currentCategoryId"
       >
-        <option value="0" disabled>Все категории</option>
+        <option class="" value="0" disabled>Все категории</option>
         <option
           :value="category.id"
           v-for="category in allCategory"
@@ -54,7 +55,7 @@
       </select>
     </div>
 
-    <div class="m-5 ml-20">
+    <div class="m-5 xl:ml-20">
       <p class="font-bold">Цвет</p>
       <ul class="colors">
         <li class="colors__item" v-for="color in allColors" :key="color.id">

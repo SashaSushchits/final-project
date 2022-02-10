@@ -17,7 +17,7 @@
           <li class="flex">
             <label class="relative">
               <input
-                class="m-3 w-9 h-9 cursor-pointer active:"
+                class="m-3 w-9 h-9 cursor-pointer"
                 type="radio"
                 name="color"
                 disabled

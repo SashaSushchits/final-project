@@ -4,7 +4,7 @@
         <a class="py-3 px-6 ml-5 bg-blue-300 hover:bg-teal-300 font-medium cursor-pointer rounded transition duration-500 text-black"
         @click.prevent="$router.back()">Назад</a>
             <div class="mx-5">
-                <div class="flex justify-center items-center">
+                <div class="flex justify-center items-center my-5">
                     <h1 class="text-3xl font-bold">Каталог :</h1>
                     <p class="ml-10 text-3xl">{{ countProducts }} товаров</p>
                 </div>
@@ -19,7 +19,7 @@
                     :filter-color.sync="filterColorData"
                     />
 
-                    <div class="flex pl-24 py-5 w-3/4">
+                    <div class="flex pl-24 w-3/4">
                         <transition name="fade">
                             <h1 class="text-3xl" v-show="filteredProducts.length === 0">Похоже товары закончились, попробуйте выбрать другую категорию </h1>
                         </transition>
@@ -27,8 +27,35 @@
                             <li class="" v-for="product in products" :key="product.id">
                                 <router-link class="catalog__pic" :to="{name: 'product', params:{id: product.id}}">
                                     <img class="dark:bg-gray-700 bg-gray-300 rounded shadow-2xl" :src="product.preview" alt="" style="cursor:pointer; width: 300px; height: 300px">
-                                    <h3 class="font-bold">{{ product.title }}</h3>
+                                    <h3 class="font-bold flex gap-2">{{ product.title }} <p> (цена {{ product.price }} Br)</p></h3>
                                 </router-link>
+                                
+                                    <ul class="flex items-center">
+                                    <p class="font-bold">Цвет:</p>
+                                    <li class="flex" v-for="color in product.colors" :key="color.id">
+                                        <label class="relative">
+                                        <input
+                                            class="m-3 w-6 h-6 cursor-text"
+                                            type="radio"
+                                            name="color"
+                                            disabled
+                                        />
+                                        <span
+                                            class="
+                                            w-6
+                                            h-6
+                                            absolute
+                                            top-3
+                                            right-3
+                                            border border-gray-500
+                                            rounded-full
+                                            cursor-pointer
+                                            "
+                                            :style="{ backgroundColor: color.code }"
+                                        ></span>
+                                        </label>
+                                    </li>
+                                    </ul>
                             </li>
                         </ul>
                     </div>

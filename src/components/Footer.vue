@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-gray-900 flex items-center justify-evenly">
+  <div class="bg-gray-900 flex lg:flex-row items-center lg:justify-evenly sm:flex-col">
     <div class="flex flex-col">
       <h3 class="text-white">Наши социальные сети:</h3>
-      <div class="flex gap-3">
+      <div class="flex gap-3 items-center">
         <router-link to="/">
           <img style="width:25px" src="@/assets/image/icons/icon_fb.svg" alt="fb">
         </router-link>
@@ -18,9 +18,9 @@
       </div>
     </div>
 
-    <div class="flex flex-col">
+    <div class="flex flex-col mt-3 items-center">
       <h3 class="text-white">Навигация по сайту:</h3>
-      <ul class="grid grid-cols-2" >
+      <ul class="grid grid-cols-2 items-center" >
         <li class="text-white" v-for="(item, index) in menu" :key="index">
           <router-link :to="item.path">
             {{item.name}}
@@ -29,7 +29,7 @@
       </ul>
     </div>
 
-    <div class="">
+    <div class="lg:block sm:hidden">
       <router-link to="/">
         <img class="icon" style="width:100px" src="@/assets/image/logo/shop.svg" alt="shop">
       </router-link>

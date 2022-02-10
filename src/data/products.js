@@ -2,7 +2,7 @@ export default [
     {
         id: 1,
         categoryId: 1,
-        title: "Смартфон Xiaomi Redmi 10",
+        title: "Xiaomi Redmi 10",
         preview: 'imageProducts/xiaomi redmi note 10.png',
         price: 1460,
         colors: [
@@ -20,7 +20,7 @@ export default [
         offers: [
             {
                 id: 11,
-                title: "Смартфон Xiaomi Redmi 10 4/64GB",
+                title: "Xiaomi Redmi 10 4/64GB",
                 price: 1460,
                 preview: 'imageProducts/xiaomi redmi note 10.png',
                 propValues: [
@@ -32,7 +32,7 @@ export default [
             },
             {
                 id: 12,
-                title: "Смартфон Xiaomi Redmi 10 4/64GB",
+                title: "Xiaomi Redmi 10 4/64GB",
                 price: 1800,
                 preview: 'imageProducts/xiaomi redmi note 10.png',
                 propValues: [
@@ -47,7 +47,7 @@ export default [
     {
         id: 2,
         categoryId: 1,
-        title: "Смартфон Xiaomi Mi A3",
+        title: "Xiaomi Mi A3",
         preview: 'imageProducts/Смартфон Xiaomi Mi A3.png',
         price: 460,
         colors: [
@@ -92,7 +92,7 @@ export default [
     {
         id: 3,
         categoryId: 1,
-        title: "Смартфон Iphone 13 Pro",
+        title: "Iphone 13 Pro",
         preview: 'imageProducts/iphone 13pro.png',
         price: 3360,
         colors: [
@@ -137,7 +137,7 @@ export default [
     {
         id: 4,
         categoryId: 1,
-        title: "Смартфон Iphone 11",
+        title: "Iphone 11",
         preview: 'imageProducts/iphone 11.png',
         price: 3000,
         colors: [
