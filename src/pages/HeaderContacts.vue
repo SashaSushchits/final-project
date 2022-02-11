@@ -239,10 +239,10 @@ export default {
   transform: translateX(10px);
 }
 .slide-enter-active, .slide-leave-active {
-  transition: opacity 5s;
+  transition: opacity .9s;
 }
 .slide-enter, .slide-leave-to {
-  opacity: 1;
+  opacity: 0;
 }
 .slide-enter-to, .slide-leave {
   opacity: 1;

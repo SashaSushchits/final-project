@@ -7,7 +7,7 @@
         <h1 class="text-3xl mt-10 ml-5" v-show="products.length === 0">В вашей корзине пока нет товаров</h1>
         
         
-            <CartItem class="m-5 flex relative dark:bg-gray-700 bg-gray-100" v-for="product in products" :key="product.id" :product="product" />
+            <CartItem class="m-5 flex lg:flex-row sm:flex-col relative dark:bg-gray-700 bg-gray-100" v-for="product in products" :key="product.id" :product="product" />
 
         </div>  
     </div>

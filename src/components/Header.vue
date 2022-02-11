@@ -8,7 +8,7 @@
     </div>
 
     <ul class="sm:hidden lg:block" v-for="(item, index) in menu" :key="index">
-      <li class="text-white m-3 p-3">
+      <li class="text-white p-3 rounded hover:text-teal-400 xl:text-xl" :class="{'current':path === item.path}" @click="updatePath(item.path)">
         <router-link :to="item.path">
           {{item.name}}
         </router-link>
@@ -29,7 +29,7 @@
       </div>
       <transition name="fade">
       <ul v-show="stateForMenu" class="menu__disable flex flex-col items-center pt-16">
-        <li class="text-white p-3" v-for="(item, index) in menu" :key="index" @click="stateMenu">
+        <li class="text-white p-3 rounded hover:text-teal-400 xl:text-xl" :class="{'current':path === item.path}" v-for="(item, index) in menu" :key="index" @click="stateMenu(item.path)">
           <router-link :to="item.path">
             {{item.name}}
           </router-link>
@@ -71,14 +71,19 @@ export default {
           path: '/maps'
         },
       ],
+      path: '/',
       stateForMenu: false
     }
   },
   methods: {
-    stateMenu(){
+    stateMenu(path){
+      this.path = path
       if(!this.stateForMenu){
         this.stateForMenu = true
       } else this.stateForMenu = false
+    },
+    updatePath(path){
+      this.path = path
     }
   }
   
@@ -86,6 +91,10 @@ export default {
 </script>
 
 <style scoped>
+.current{
+  color: rgb(86, 105, 190);
+  font-size: 18px;
+}
 .icon {
   filter: invert(1);
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-20 items-center">
+  <div class="flex xl:gap-20 sm:gap-2 items-center">
     <div>
       <img
         class="dark:bg-gray-600 bg-gray-300 rounded shadow-2xl"
@@ -70,7 +70,10 @@
             rounded
             text-black text-2xl text-center
           "
-          type="text"
+          type="number"
+          min="1"
+          max="20"
+          pattern="^[0-9]{2}"
           v-model.number="amount"
         />
 
@@ -92,9 +95,9 @@
       </div>
     </div>
     <div>
-      <h1 class="text-3xl dark:text-blue-500 text-blue-300">
+      <h1 class="text-3xl dark:text-blue-500 text-blue-300 pb-3">
         Цена:
-        {{ (product.product.price * product.amount) | numberFormat }} рублей
+        {{ (product.product.price * product.amount) | numberFormat }} Br
       </h1>
     </div>
 

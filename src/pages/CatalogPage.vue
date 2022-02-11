@@ -5,29 +5,33 @@
         @click.prevent="$router.back()">Назад</a>
             <div class="mx-5">
                 <div class="flex justify-center items-center my-5">
-                    <h1 class="text-3xl font-bold">Каталог :</h1>
-                    <p class="ml-10 text-3xl">{{ countProducts }} товаров</p>
+                    <h1 class="lg:text-3xl sm:text-2xl font-bold">Каталог :</h1>
+                    <p class="lg:ml-10 sm:ml-1 lg:text-3xl sm:text-2xl">{{ countProducts }} товаров</p>
                 </div>
                 
 
                 <div class="flex">
+
+                    
 
                     <ProductFilter
                     :price-from.sync="filterPriceFrom"
                     :price-to.sync="filterPriceTo"
                     :category-id.sync="filterCategoryId"
                     :filter-color.sync="filterColorData"
+                    class="lg:block sm:hidden "
                     />
 
-                    <div class="flex pl-24 w-3/4">
+                    <div class="flex lg:pl-24 sm:pl-20 lg:w-3/4 sm:w-full">
                         <transition name="fade">
-                            <h1 class="text-3xl" v-show="filteredProducts.length === 0">Похоже товары закончились, попробуйте выбрать другую категорию </h1>
+                            <h1 class="text-3xl h-screen" v-show="filteredProducts.length === 0">Похоже товары закончились, попробуйте выбрать другую категорию </h1>
                         </transition>
-                        <ul class="flex flex-wrap gap-5">
+                        <ul class="flex flex-wrap gap-5  md:mr-0 sm:mr-3">
                             <li class="" v-for="product in products" :key="product.id">
                                 <router-link class="catalog__pic" :to="{name: 'product', params:{id: product.id}}">
-                                    <img class="dark:bg-gray-700 bg-gray-300 rounded shadow-2xl" :src="product.preview" alt="" style="cursor:pointer; width: 300px; height: 300px">
-                                    <h3 class="font-bold flex gap-2">{{ product.title }} <p> (цена {{ product.price }} Br)</p></h3>
+                                    <img class="dark:bg-gray-700 bg-gray-300 rounded shadow-2xl md:block sm:hidden" :src="product.preview" alt="" style="cursor:pointer; width: 300px; height: 300px">
+                                    <img class="dark:bg-gray-700 bg-gray-300 rounded shadow-2xl md:hidden sm:block" :src="product.preview" alt="" style="cursor:pointer; width: 200px; height: 200px">
+                                    <h3 class="font-bold flex md:flex-row sm:flex-col gap-2">{{ product.title }} <p> (цена {{ product.price }} Br)</p></h3>
                                 </router-link>
                                 
                                     <ul class="flex items-center">
@@ -58,6 +62,28 @@
                                     </ul>
                             </li>
                         </ul>
+                    </div>
+
+                    <div class="lg:hidden sm:block flex items-center fixed left-0">
+                        <div class="flex relative">
+                            <input class="opacity-0 w-12 h-12 z-40 absolute left-0.5" type="checkbox" id="checkbox" v-model="stateForFilter">
+                            <div class="burger__filter">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <transition name="fade">
+                         <ProductFilter
+                         v-show="stateForFilter"
+                        :price-from.sync="filterPriceFrom"
+                        :price-to.sync="filterPriceTo"
+                        :category-id.sync="filterCategoryId"
+                        :filter-color.sync="filterColorData"
+                        :state-filter.sync="stateForFilter"
+                        class="w-96 h-screen filter__disable overflow-y-scroll"
+                        />
+                        </transition>
                     </div>
 
                 </div>
@@ -94,8 +120,17 @@ import ProductFilter from '@/components/ProductFilter'
                 allProducts: products,
                 
                 page: 1,
-                productsPerPage: 12
+                productsPerPage: 12,
+
+                stateForFilter: false
                 
+            }
+        },
+        methods: {
+            stateFilter(){
+                if(!this.stateForFilter){
+                    this.stateForFilter = true
+                } else this.stateForFilter = false
             }
         },
         computed: {
@@ -150,10 +185,69 @@ import ProductFilter from '@/components/ProductFilter'
 
 <style scoped>
 
+.burger__filter {
+    height: 50px;
+    width: 50px;
+    z-index: 7;
+    position: relative;
+}
+
+.burger__filter > span {
+    position: absolute;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 10px;
+    background-color: #737373;
+}
+
+.burger__filter > span:nth-child(1) {
+    top: 0;
+}
+.burger__filter > span:nth-child(2) {
+    top: 15px;
+    width: 50%;
+}
+.burger__filter > span:nth-child(3) {
+    top: 30px;
+    width: 25%;
+}
+
+
+.filter__disable {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(46, 46, 46) !important;
+    z-index: 5;
+    height: 100vh;
+    width: 320px;
+    row-gap: 15px;
+    color: rgb(248, 251, 251);
+
+}
+
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .7s;
+  transition: opacity .9s;
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
+
+#checkbox:checked ~ .menu__disable {
+    animation: menuWidthOpen 3s forwards;
+}
+
+@keyframes menuWidthOpen {
+    0% {
+        right: -320px;
+    }
+    50% {
+        right: 0px;
+    }
+    100% {
+        right: 0px;
+        width: 320px;
+    }
+} 
 </style>

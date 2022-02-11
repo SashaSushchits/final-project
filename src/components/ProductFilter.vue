@@ -39,7 +39,7 @@
     <div class="mt-5 mb-12 xl:ml-20 ml-5">
       <p class="font-bold">Категория</p>
       <select
-        class="dark:bg-gray-300 bg-gray-400 text-black rounded xl:w-2/3 p-2"
+        class="dark:bg-gray-300 bg-gray-400 text-black rounded xl:w-2/3 sm:w-5/6 p-2"
         type="text"
         name="category"
         v-model.number="currentCategoryId"
@@ -133,7 +133,7 @@ export default {
       currentPriceFrom: 0,
       currentPriceTo: 0,
       currentCategoryId: 0,
-      currentColorData: [],
+      currentColorData: []
     };
   },
   props: [
@@ -141,8 +141,7 @@ export default {
     "priceTo",
     "categoryId",
     "filterColor",
-    "propsData",
-    "propsCode",
+    "satateFilter",
   ],
   computed: {
     categories() {
@@ -150,12 +149,7 @@ export default {
     },
     colors() {
       return this.colorsData ? this.colorsData.items : [];
-    },
-    stateFilter() {
-      if (!this.stateForFilter) this.stateForFilter === true;
-      else this.stateForFilter === false;
-      return this.stateForFilter;
-    },
+    }
   },
   methods: {
     submit() {
@@ -163,6 +157,7 @@ export default {
       this.$emit("update:priceTo", this.currentPriceTo);
       this.$emit("update:categoryId", this.currentCategoryId);
       this.$emit("update:filterColor", this.currentColorData);
+      this.$emit("update:stateFilter", false);
     },
     reset() {
       this.$emit("update:priceFrom", 0);
