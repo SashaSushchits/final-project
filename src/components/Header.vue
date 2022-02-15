@@ -8,16 +8,16 @@
     </div>
 
     <ul class="sm:hidden lg:block" v-for="(item, index) in menu" :key="index">
-      <li class="text-white p-3 rounded hover:text-teal-400 xl:text-xl" :class="{'current':path === item.path}" @click="updatePath(item.path)">
-        <router-link :to="item.path">
-          {{item.name}}
-        </router-link>
-      </li>
+      <router-link :to="item.path" class="text-white p-3 rounded hover:text-teal-400 xl:text-xl">
+       <li :class="{'current':path === item.path}" @click="updatePath(item.path)">
+         {{item.name}}
+       </li>       
+      </router-link>
     </ul>
 
     <div class="flex items-center sm:mr-5 lg:mr-0">
       <ChangeTheme />
-      <CartIndicator />
+      <CartIndicator @path="updatePath('')"/>
 
       <div class="flex relative">
         <input class="opacity-0 w-12 h-12 z-40 absolute left-0" type="checkbox" id="checkbox" v-model="stateForMenu">
@@ -29,8 +29,8 @@
       </div>
       <transition name="fade">
       <ul v-show="stateForMenu" class="menu__disable flex flex-col items-center pt-16">
-        <li class="text-white p-3 rounded hover:text-teal-400 xl:text-xl" :class="{'current':path === item.path}" v-for="(item, index) in menu" :key="index" @click="stateMenu(item.path)">
-          <router-link :to="item.path">
+        <li class="text-white p-3 rounded hover:text-teal-400 xl:text-xl" v-for="(item, index) in menu" :key="index" @click="stateMenu(item.path)">
+          <router-link :to="item.path" :class="{'current':path === item.path}">
             {{item.name}}
           </router-link>
         </li>

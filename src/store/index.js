@@ -9,6 +9,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     cartProducts: JSON.parse(localStorage.getItem('cart')) || [],
+    form: []
   },
   mutations: {
     addProductToCart(state, payload){
@@ -41,7 +42,10 @@ export default new Vuex.Store({
         console.log(arr)
         state.cartProducts = arr;
       }
-    }
+    },
+    updateForm(state, payload){
+      state.form = payload
+    },
   },
   getters: {
     cartProductsDetail(state) {
@@ -53,6 +57,9 @@ export default new Vuex.Store({
       });
       localStorage.setItem('cart', JSON.stringify(arr));
       return arr
+    },
+    totalPrice(state, getters){
+      return getters.cartProductsDetail.reduce((acc, item) => (item.product.price * item.amount) + acc, 0)
     }
   },
   modules: {

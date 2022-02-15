@@ -70,9 +70,7 @@
             rounded
             text-black text-2xl text-center
           "
-          type="number"
-          min="1"
-          max="20"
+          type="number" min="1" max="20"
           pattern="^[0-9]{2}"
           v-model.number="amount"
         />
